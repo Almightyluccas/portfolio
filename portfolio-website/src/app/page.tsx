@@ -379,7 +379,7 @@ export default function Portfolio() {
   const experience = [
     {
       title: "Software Engineer",
-      company: "TechFlow Solutions",
+      company: "NearAbl",
       period: "June 2024 - Current",
       location: "New York, NY",
       description:
