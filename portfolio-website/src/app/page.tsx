@@ -115,8 +115,8 @@ function ImageModal({
             src={screenshots[currentIndex] || "/placeholder.svg"}
             alt={`${projectTitle} screenshot ${currentIndex + 1}`}
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-            height={5000}
-            width={5000}
+            height={4000}
+            width={4000}
           />
 
           {/* Navigation Arrows */}
