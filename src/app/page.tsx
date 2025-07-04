@@ -313,9 +313,10 @@ export default function Portfolio() {
       description:
         "An e-commerce platform built with Laravel and PHP, featuring product listings populated by images and data scraped from StockX. The site supports user-friendly browsing, product management, and order processing, backed by a robust MySQL database.",
       screenshots: [
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
+        "/images/ecommerce/ecommerce-homepage.png",
+        "/images/ecommerce/ecommerce-productPage.png",
+        "/images/ecommerce/ecommerce-shoppage.png",
+        "/images/ecommerce/ecommerce-profile.png"
       ],
       technologies: [
         "Laravel",
@@ -326,7 +327,7 @@ export default function Portfolio() {
         "Composer"
       ],
       github: "https://github.com/Almightyluccas/Sneaker-Ecommerce",
-      live: "#",
+      live: "https://sneaker-ecommerce-master-63o9kp.laravel.cloud/",
       category: "fullstack",
       featured: true,
     },
