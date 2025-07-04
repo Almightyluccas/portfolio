@@ -336,9 +336,11 @@ export default function Portfolio() {
       description:
         "A Discord bot featuring an attendance system that pulls data from a database to display user attendance calendars directly in Discord. It includes application notifications to recruiters for new submissions, and updates on application status (accepted or denied). Users can also send messages through the bot, either as embeds or regular text messages.",
       screenshots: [
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
+        "/images/nswg1-bot/nswg1-bot-calendar.png",
+        "/images/nswg1-bot/nswg1-bot-newApplication.png",
+        "/images/nswg1-bot/nswg1-bot-accepted.png",
+        "/images/nswg1-bot/nswg1-bot-event.png",
+        "/images/nswg1-bot/nswg1-bot-create-message.png",
       ],
       technologies: [
         "Node.js",
@@ -347,7 +349,7 @@ export default function Portfolio() {
         "MySQL",
       ],
       github: "https://github.com/Almightyluccas/NSWG1-Discord-Bot",
-      live: "#",
+      live: "https://github.com/Almightyluccas/NSWG1-Discord-Bot",
       category: "backend",
       featured: true,
     },
@@ -356,9 +358,7 @@ export default function Portfolio() {
       description:
         "A TypeScript application providing real-time monitoring and analytics for NSWG1 game server activity. Features include player session tracking, raid schedule management, secure AES encryption for sensitive data, and MySQL integration for persistent storage. Built with clean architecture principles and deployed on Heroku. Made to be used with Discord Bot",
       screenshots: [
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
-        "/placeholder.svg?height=250&width=400",
+        "/images/nswg1-scraper/nswg1-webscraper.png",
       ],
       technologies: [
         "TypeScript",
@@ -370,7 +370,7 @@ export default function Portfolio() {
         "Heroku"
       ],
       github: "https://github.com/Almightyluccas/NSWG1-Web-Scraper",
-      live: "#",
+      live: "https://github.com/Almightyluccas/NSWG1-Discord-Bot",
       category: "backend",
       featured: true,
     },
@@ -398,29 +398,44 @@ export default function Portfolio() {
   ]
 
   const techStack = {
-    backend: [
-      { name: "Node.js", icon: "🟢" },
+    programmingLanguages: [
+      { name: "JavaScript", icon: "🟡" },
       { name: "TypeScript", icon: "🔷" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "MongoDB", icon: "🍃" },
-      { name: "Redis", icon: "🔴" },
-      { name: "GraphQL", icon: "💜" },
+      { name: "Python", icon: "🐍" },
+      { name: "PHP", icon: "🐘" },
+      { name: "C#", icon: "🎵" },
+      { name: "Go (Golang)", icon: "🐹" },
     ],
-    frontend: [
+    frontendDevelopment: [
       { name: "React", icon: "⚛️" },
       { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "🔷" },
-      { name: "TailwindCSS", icon: "🎨" },
-      { name: "Three.js", icon: "🎲" },
-      { name: "Framer Motion", icon: "🎭" },
+      { name: "Vue.js", icon: "💚" }, // Highly sought after
+      { name: "HTML", icon: "📄" },
+      { name: "CSS", icon: "💅" },
+      { name: "Tailwind CSS", icon: "🎨" },
+      { name: "Bootstrap", icon: "🅱️" },
     ],
-    devops: [
+    backendDevelopment: [
+      { name: "Node.js", icon: "🟢" },
+      { name: "Laravel", icon: "✨" }, // Crucial for PHP roles
+      { name: "Django", icon: "🎼" }, // Crucial for Python roles
+      { name: "Flask", icon: "🍶" },
+      { name: "FastAPI", icon: "⚡" },
+      { name: "GraphQL", icon: "💜" },
+    ],
+    databases: [
+      { name: "PostgreSQL", icon: "🐘" },
+      { name: "MongoDB", icon: "🍃" },
+      { name: "MySQL", icon: "🐬" },
+      { name: "Redis", icon: "🔴" },
+      { name: "SQL Server", icon: "💾" }, // Important for C#/.NET stack
+    ],
+    cloudAndDevOps: [
+      { name: "AWS", icon: "☁️" },
       { name: "Docker", icon: "🐳" },
       { name: "Kubernetes", icon: "☸️" },
-      { name: "AWS", icon: "☁️" },
-      { name: "GitHub Actions", icon: "🔄" },
-      { name: "Prometheus", icon: "📊" },
-      { name: "Nginx", icon: "🌐" },
+      { name: "GitHub Actions", icon: "🔄" }, // CI/CD
+      { name: "Nginx", icon: "🌐" }, // Web server/reverse proxy
     ],
   }
 
@@ -625,7 +640,7 @@ export default function Portfolio() {
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                 I also create intuitive interfaces with React and modern CSS frameworks.
                 I&apos;m particularly passionate about microservices, API design, and DevOps practices.
-                I enjoy exploring new technologies, contributing to open source, and optimizing database performance.
+                I enjoy exploring new technologies, and optimizing database performance.
               </p>
 
               <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-8">
@@ -644,11 +659,14 @@ export default function Portfolio() {
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 rounded-3xl backdrop-blur-sm border border-purple-500/20 shadow-2xl shadow-purple-500/10" />
                 <div className="absolute inset-4 sm:inset-6 bg-gray-800/50 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <div className="text-center text-gray-400">
-                    <Code className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-purple-400" />
-                    <p className="text-base sm:text-lg font-medium">Professional Photo</p>
-                    <p className="text-xs sm:text-sm text-gray-500 mt-2">Backend Developer</p>
-                  </div>
+                  <Image
+                    src="/images/thumbnail_IMG_4963.jpg"
+                    alt="Professional Photo"
+                    width={384}
+                    height={384}
+                    className="object-cover w-full h-full"
+                  />
+
                 </div>
                 <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full animate-pulse" />
                 <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full animate-pulse delay-1000" />
