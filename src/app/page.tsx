@@ -4,9 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+
 import {
   Github,
   Linkedin,
@@ -19,12 +17,12 @@ import {
   Download,
   Calendar,
   MapPin,
-  Send,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"
 import Image from "next/image";
 import  HeroScene  from "@/components/3dHeroScene"
+import ContactSection from "@/components/contactForm";
 
 
 // Image Modal Component
@@ -985,69 +983,70 @@ export default function Portfolio() {
                 </a>
               </div>
             </div>
+             <ContactSection/>
 
-            <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10">
-              <CardHeader>
-                <CardTitle className="text-white text-xl sm:text-2xl">Send a Message</CardTitle>
-                <CardDescription className="text-gray-400 text-base sm:text-lg">
-                  Fill out the form below and I&apos;ll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-300 font-medium text-sm sm:text-base">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="Your full name"
-                      className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"
-                    />
-                  </div>
+            {/*<Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10">*/}
+            {/*  <CardHeader>*/}
+            {/*    <CardTitle className="text-white text-xl sm:text-2xl">Send a Message</CardTitle>*/}
+            {/*    <CardDescription className="text-gray-400 text-base sm:text-lg">*/}
+            {/*      Fill out the form below and I&apos;ll get back to you as soon as possible.*/}
+            {/*    </CardDescription>*/}
+            {/*  </CardHeader>*/}
+            {/*  <CardContent className="space-y-4 sm:space-y-6">*/}
+            {/*    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">*/}
+            {/*      <div className="space-y-2">*/}
+            {/*        <Label htmlFor="name" className="text-gray-300 font-medium text-sm sm:text-base">*/}
+            {/*          Name*/}
+            {/*        </Label>*/}
+            {/*        <Input*/}
+            {/*          id="name"*/}
+            {/*          placeholder="Your full name"*/}
+            {/*          className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"*/}
+            {/*        />*/}
+            {/*      </div>*/}
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-300 font-medium text-sm sm:text-base">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"
-                    />
-                  </div>
-                </div>
+            {/*      <div className="space-y-2">*/}
+            {/*        <Label htmlFor="email" className="text-gray-300 font-medium text-sm sm:text-base">*/}
+            {/*          Email*/}
+            {/*        </Label>*/}
+            {/*        <Input*/}
+            {/*          id="email"*/}
+            {/*          type="email"*/}
+            {/*          placeholder="your.email@example.com"*/}
+            {/*          className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"*/}
+            {/*        />*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
 
-                <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-gray-300 font-medium text-sm sm:text-base">
-                    Subject
-                  </Label>
-                  <Input
-                    id="subject"
-                    placeholder="What's this about?"
-                    className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"
-                  />
-                </div>
+            {/*    <div className="space-y-2">*/}
+            {/*      <Label htmlFor="subject" className="text-gray-300 font-medium text-sm sm:text-base">*/}
+            {/*        Subject*/}
+            {/*      </Label>*/}
+            {/*      <Input*/}
+            {/*        id="subject"*/}
+            {/*        placeholder="What's this about?"*/}
+            {/*        className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-10 sm:h-12 text-sm sm:text-base"*/}
+            {/*      />*/}
+            {/*    </div>*/}
 
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-gray-300 font-medium text-sm sm:text-base">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell me about your project or just say hello..."
-                    rows={5}
-                    className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 resize-none text-sm sm:text-base"
-                  />
-                </div>
+            {/*    <div className="space-y-2">*/}
+            {/*      <Label htmlFor="message" className="text-gray-300 font-medium text-sm sm:text-base">*/}
+            {/*        Message*/}
+            {/*      </Label>*/}
+            {/*      <Textarea*/}
+            {/*        id="message"*/}
+            {/*        placeholder="Tell me about your project or just say hello..."*/}
+            {/*        rows={5}*/}
+            {/*        className="bg-gray-700/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-purple-400/20 resize-none text-sm sm:text-base"*/}
+            {/*      />*/}
+            {/*    </div>*/}
 
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm sm:text-base">
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Send Message
-                </Button>
-              </CardContent>
-            </Card>
+            {/*    <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm sm:text-base">*/}
+            {/*      <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />*/}
+            {/*      Send Message*/}
+            {/*    </Button>*/}
+            {/*  </CardContent>*/}
+            {/*</Card>*/}
           </div>
         </div>
       </section>
