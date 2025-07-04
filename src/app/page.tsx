@@ -25,7 +25,6 @@ import  HeroScene  from "@/components/3dHeroScene"
 import ContactSection from "@/components/contactForm";
 
 
-// Image Modal Component
 function ImageModal({
   isOpen,
   onClose,

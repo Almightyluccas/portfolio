@@ -1,21 +1,8 @@
-
 'use server'
 
 import { z } from 'zod'
 import mysql from 'mysql2/promise'
 
-// Define types for MySQL result
-interface MySQLResult {
-  fieldCount: number;
-  affectedRows: number;
-  insertId: number;
-  serverStatus: number;
-  warningCount: number;
-  message: string;
-  changedRows: number;
-}
-
-// Database connection configuration
 const pool = mysql.createPool({
   host: process.env.MYSQL_HOST,
   user: process.env.MYSQL_USER,
@@ -26,7 +13,6 @@ const pool = mysql.createPool({
   queueLimit: 0
 })
 
-// Define a schema for form validation
 const ContactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Invalid email address" }),
@@ -35,7 +21,6 @@ const ContactFormSchema = z.object({
 })
 
 export async function submitContactForm(formData: FormData) {
-  // Parse the form data using Zod schema
   const validatedFields = ContactFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -43,7 +28,6 @@ export async function submitContactForm(formData: FormData) {
     message: formData.get('message')
   })
 
-  // Check if validation fails
   if (!validatedFields.success) {
     return {
       success: false,
@@ -55,7 +39,6 @@ export async function submitContactForm(formData: FormData) {
   const { name, email, subject, message } = validatedFields.data
 
   try {
-    // Ensure the database and table exist
     await pool.execute(`
       CREATE TABLE IF NOT EXISTS contacts (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -67,7 +50,6 @@ export async function submitContactForm(formData: FormData) {
       )
     `)
 
-    // Insert contact form data into the database
     const query = `
         INSERT INTO contacts (name, email, subject, message)
         VALUES (?, ?, ?, ?)

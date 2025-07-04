@@ -44,7 +44,6 @@ export default function ContactSection() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    // Get form using ref
     const form = formRef.current
     if (!form) {
       console.error('Form reference is null')
@@ -55,7 +54,6 @@ export default function ContactSection() {
     setErrors({})
     setSubmitStatus(null)
 
-    // Collect form data
     const formData = new FormData(form)
     const formValues = {
       name: formData.get('name') as string,
@@ -65,11 +63,9 @@ export default function ContactSection() {
     }
 
     try {
-      // Validate form data
       const validatedData = ContactFormSchema.safeParse(formValues)
 
       if (!validatedData.success) {
-        // Handle validation errors
         const fieldErrors = validatedData.error.flatten().fieldErrors
         setErrors(fieldErrors)
         setSubmitStatus({
@@ -79,28 +75,23 @@ export default function ContactSection() {
         return
       }
 
-      // Submit form data
       const result = await submitContactForm(formData)
 
       if (result.success) {
-        // Reset form using ref
         form.reset()
         setSubmitStatus({
           message: result.message || 'Message sent successfully!',
           isSuccess: true
         })
       } else {
-        // Handle server errors - safely set errors with proper type checking
         if (result.errors) {
           const serverErrors: typeof errors = {}
 
-          // Handle field-specific errors
           if ('name' in result.errors) serverErrors.name = result.errors.name
           if ('email' in result.errors) serverErrors.email = result.errors.email
           if ('subject' in result.errors) serverErrors.subject = result.errors.subject
           if ('message' in result.errors) serverErrors.message = result.errors.message
 
-          // Handle general errors
           if ('_' in result.errors) serverErrors._ = result.errors._
 
           setErrors(serverErrors)
