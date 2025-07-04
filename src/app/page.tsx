@@ -304,7 +304,7 @@ export default function Portfolio() {
         "Tailwind CSS"
       ],
       github: "https://github.com/Almightyluccas/NSWG1-Website",
-      live: "https://nswg-1-website.vercel.app",
+      live: "https://nswg1.org",
       category: "fullstack",
       featured: true,
     },
